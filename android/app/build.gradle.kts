@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.namer_app"
+    namespace = "com.example.ldsw_utilizacion_de_widgets"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
