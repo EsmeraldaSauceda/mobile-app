@@ -1,5 +1,6 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:ldsw_utilizacion_de_widgets/login.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -42,78 +43,21 @@ class MyHomePage extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(10),
-              child: Titulo(),
+              child: Text('Welcome to MOVIES', style: TextStyle(fontSize: 25),),
             ),
             SizedBox(
               height: 250.0,
               width: 250.0,
               child: Image.network('https://cdn.pixabay.com/photo/2014/03/25/16/54/tape-297596_1280.png'),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: 30.0,
-                width: 170.0,
-                child: Boton()),
-            ),
-            SizedBox(
-              height: 30.0,
-              width: 170.0,
-              child: Boton2())
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+            }, style: ElevatedButton.styleFrom(
+      backgroundColor: Color.fromRGBO(67, 76, 57, 1),
+    ), child: Text('Enter the app', style: TextStyle(color: Color.fromRGBO(218, 192, 167, 1))))
           ],
         ),
       )
-    );
-  }
-}
-
-class Boton2 extends StatelessWidget {
-  const Boton2({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
-      backgroundColor: Color.fromRGBO(67, 76, 57, 1),
-    ), child: Text('Registrarse',
-      style: TextStyle(color: Color.fromRGBO(218, 192, 167, 1)),
-    ),);
-  }
-}
-
-class Boton extends StatelessWidget {
-  const Boton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
-      backgroundColor: Color.fromRGBO(67, 76, 57, 1),
-    ), child: Text('Iniciar Sesión',
-      style: TextStyle(color: Color.fromRGBO(218, 192, 167, 1)),
-    ),);
-  }
-}
-
-class Titulo extends StatelessWidget {
-  const Titulo({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(12),
-      child: const Text(
-        'MOVIES',
-        style: TextStyle(
-          color: Color.fromRGBO(149, 115, 78, 1),
-          fontSize: 40,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
     );
   }
 }
