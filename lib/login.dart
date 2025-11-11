@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ldsw_utilizacion_de_widgets/login_account.dart';
+import 'package:ldsw_utilizacion_de_widgets/register.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -31,13 +33,6 @@ class Login extends StatelessWidget {
               width: 170.0,
               child: Boton2()
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: 30.0,
-                width: 170.0,
-                child: Boton3()),
-            )
           ],
         ),
       )
@@ -45,20 +40,7 @@ class Login extends StatelessWidget {
   }
 }
 
-class Boton3 extends StatelessWidget {
-  const Boton3({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: (){
-      Navigator.pop(context);
-    },style: ElevatedButton.styleFrom(
-      backgroundColor: Color.fromRGBO(67, 76, 57, 1),
-    ), child: Text('Home', style: TextStyle(color: Color.fromRGBO(218, 192, 167, 1)),));
-  }
-}
 
 class Boton2 extends StatelessWidget {
   const Boton2({
@@ -67,7 +49,9 @@ class Boton2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
+    return ElevatedButton(onPressed: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Register()));
+    },style: ElevatedButton.styleFrom(
       backgroundColor: Color.fromRGBO(67, 76, 57, 1),
     ), child: Text('Registrarse',
       style: TextStyle(color: Color.fromRGBO(218, 192, 167, 1)),
@@ -82,7 +66,9 @@ class Boton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
+    return ElevatedButton(onPressed: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+    },style: ElevatedButton.styleFrom(
       backgroundColor: Color.fromRGBO(67, 76, 57, 1),
     ), child: Text('Iniciar Sesión',
       style: TextStyle(color: Color.fromRGBO(218, 192, 167, 1)),
